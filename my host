@@ -1,0 +1,821 @@
+UWSGI | PROCESSES | HTTP REQUESTS
+Logs are available in the file: /home/empirenexus/admin/logs/uwsgi/1013863.log
+spawned uWSGI master process (pid: 1294409)
+spawned uWSGI worker 1 (pid: 1294410, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+Traceback (most recent call last):
+  File "/home/empirenexus/Economy/wsgi.py", line 1, in <module>
+    from dashboard import app as application
+  File "/home/empirenexus/Economy/dashboard.py", line 309, in <module>
+    init_db()
+    ~~~~~~~^^
+  File "/home/empirenexus/Economy/dashboard.py", line 131, in init_db
+    conn = get_db()
+  File "/home/empirenexus/Economy/dashboard.py", line 127, in get_db
+    conn.execute('PRAGMA journal_mode=WAL')
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: locking protocol
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+OOPS ! failed loading app in worker 1 (pid 1294410)
+Wed Feb 11 05:45:44 2026 - need-app requested, destroying the instance...
+SIGINT/SIGTERM received...killing workers...
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 05:53:58 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7f5612aff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1307853)
+spawned uWSGI worker 1 (pid: 1307855, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f5612aff9f0 pid: 1307855 (default app)
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 08:29:02 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7fe8660ff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1690018)
+spawned uWSGI worker 1 (pid: 1690019, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fe8660ff9f0 pid: 1690019 (default app)
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 09:35:09 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7f9ce76ff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1835827)
+spawned uWSGI worker 1 (pid: 1835828, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f9ce76ff9f0 pid: 1835828 (default app)
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 10:37:08 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7f92e90ff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1950156)
+spawned uWSGI worker 1 (pid: 1950157, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f92e90ff9f0 pid: 1950157 (default app)
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Callback received with code: srItF...
+DEBUG: Attempting token request to Discord...
+DEBUG: Token response status: 200
+DEBUG: Successfully joined user 947723487743705108 to support server.
+DEBUG: Access token stored in session. Redirecting to /servers...
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Callback received with code: EumQ9...
+DEBUG: Attempting token request to Discord...
+DEBUG: Token response status: 200
+[busyness] 5s average busyness is at 100%, will spawn 1 new worker(s)
+spawned uWSGI worker 2 (pid: 1968401, cores: 1)
+spawned 1 offload threads for uWSGI worker 2
+DEBUG: Successfully joined user 458654247870005268 to support server.
+DEBUG: Access token stored in session. Redirecting to /servers...
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7f92e90ff9f0 pid: 1968401 (default app)
+[busyness] 5s average busyness is at 0%, cheap one of 2 running workers
+worker 1 killed successfully (pid: 1950157)
+uWSGI worker 1 cheaped.
+DEBUG: Client ID: 1464539165856239626
+SIGINT/SIGTERM received...killing workers...
+worker 2 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 12:45:33 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7f92a10ff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2191485)
+spawned uWSGI worker 1 (pid: 2191486, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7f92a10ff9f0 pid: 2191486 (default app)
+DEBUG: Client ID: 1464539165856239626
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 13:45:33 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7f83c52ff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2302473)
+spawned uWSGI worker 1 (pid: 2302474, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f83c52ff9f0 pid: 2302474 (default app)
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Callback received with code: gSxmZ...
+DEBUG: Attempting token request to Discord...
+DEBUG: Token response status: 200
+DEBUG: Successfully joined user 1324354578338025533 to support server.
+DEBUG: Access token stored in session. Redirecting to /servers...
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Callback received with code: xarVJ...
+DEBUG: Attempting token request to Discord...
+DEBUG: Token response status: 200
+DEBUG: Successfully joined user 1324354578338025533 to support server.
+DEBUG: Access token stored in session. Redirecting to /servers...
+
+============================================================
+DEBUG: Incoming Top.gg webhook request
+DEBUG: Method: POST
+DEBUG: Headers: {'Host': 'empirenexus.alwaysdata.net', 'Accept': 'application/json, text/plain, */*', 'Content-Type': 'application/json', 'User-Agent': 'Top.gg Webhook/1.0.0', 'Authorization': 'nexus_default_secret', 'Content-Length': '134', 'X-Real-Ip': '159.203.105.187', 'Via': '1.1 alproxy', 'X-Forwarded-Proto': 'https'}
+DEBUG: Content-Type: application/json
+DEBUG: JSON Data: {'user': '1324354578338025533', 'type': 'upvote', 'query': '', 'isWeekend': False, 'bot': '1464539165856239626', 'entity': '1464539165856239626'}
+DEBUG: Auth Header Received: nexus_default_secret
+DEBUG: Expected Secret: nexus_default_secret
+DEBUG: ✅ Authorization passed
+DEBUG: Vote Type: upvote
+DEBUG: Processing vote for user_id: 1324354578338025533, timestamp: 1770814533
+DEBUG: ✅ Successfully processed Top.gg upvote for user 1324354578338025533
+============================================================
+
+...gracefully killing workers...
+Gracefully killing worker 1 (pid: 2302474)...
+worker 1 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/empirenexus
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 ([fd00::6:f98e]:8100)
+running /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+[uWSGI] getting INI configuration from /home/empirenexus/admin/config/uwsgi/1013863.conf
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 14:25:27 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+ipv6a = fd00::6:f98e
+uwsgi socket 0 inherited INET6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7fc16a6ff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 2302473)
+spawned uWSGI worker 1 (pid: 2388985, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x7fc16a6ff9f0 pid: 2388985 (default app)
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Callback received with code: KPBOg...
+DEBUG: Attempting token request to Discord...
+DEBUG: Token response status: 200
+DEBUG: Successfully joined user 1460343829155680472 to support server.
+DEBUG: Access token stored in session. Redirecting to /servers...
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 15:45:33 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7f061baff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2563844)
+spawned uWSGI worker 1 (pid: 2563845, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f061baff9f0 pid: 2563845 (default app)
+DEBUG: Client ID: 1464539165856239626
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 16:45:33 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7fba400ff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2699989)
+spawned uWSGI worker 1 (pid: 2699990, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+Traceback (most recent call last):
+  File "/home/empirenexus/Economy/wsgi.py", line 1, in <module>
+    from dashboard import app as application
+  File "/home/empirenexus/Economy/dashboard.py", line 16, in <module>
+    raise RuntimeError("FLASK_SECRET must be set to a strong value")
+RuntimeError: FLASK_SECRET must be set to a strong value
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+OOPS ! failed loading app in worker 1 (pid 2699990)
+Wed Feb 11 16:45:34 2026 - need-app requested, destroying the instance...
+SIGINT/SIGTERM received...killing workers...
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 16:46:18 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7ff28c2ff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2702329)
+spawned uWSGI worker 1 (pid: 2702333, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+Traceback (most recent call last):
+  File "/home/empirenexus/Economy/wsgi.py", line 1, in <module>
+    from dashboard import app as application
+  File "/home/empirenexus/Economy/dashboard.py", line 16, in <module>
+    raise RuntimeError("FLASK_SECRET must be set to a strong value")
+RuntimeError: FLASK_SECRET must be set to a strong value
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+OOPS ! failed loading app in worker 1 (pid 2702333)
+Wed Feb 11 16:46:19 2026 - need-app requested, destroying the instance...
+SIGINT/SIGTERM received...killing workers...
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 17:02:46 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7f4d886ff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2733260)
+spawned uWSGI worker 1 (pid: 2733261, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+Traceback (most recent call last):
+  File "/home/empirenexus/Economy/wsgi.py", line 1, in <module>
+    from dashboard import app as application
+  File "/home/empirenexus/Economy/dashboard.py", line 16, in <module>
+    raise RuntimeError("FLASK_SECRET must be set to a strong value")
+RuntimeError: FLASK_SECRET must be set to a strong value
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+OOPS ! failed loading app in worker 1 (pid 2733261)
+Wed Feb 11 17:02:47 2026 - need-app requested, destroying the instance...
+SIGINT/SIGTERM received...killing workers...
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 17:30:00 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7f71cf2ff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2789054)
+spawned uWSGI worker 1 (pid: 2789055, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f71cf2ff9f0 pid: 2789055 (default app)
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+DEBUG: Client ID: 1464539165856239626
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 19:45:33 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7fca9ecff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3039036)
+spawned uWSGI worker 1 (pid: 3039037, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fca9ecff9f0 pid: 3039037 (default app)
+DEBUG: Client ID: 1464539165856239626
+SIGINT/SIGTERM received...killing workers...
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 20:19:28 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy/
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7f51778ff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3095078)
+spawned uWSGI worker 1 (pid: 3095079, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+Traceback (most recent call last):
+  File "/home/empirenexus/Economy/wsgi.py", line 1, in <module>
+    from dashboard import app as application
+ModuleNotFoundError: No module named 'dashboard'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+OOPS ! failed loading app in worker 1 (pid 3095079)
+Wed Feb 11 20:19:29 2026 - need-app requested, destroying the instance...
+SIGINT/SIGTERM received...killing workers...
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.31 (64bit) on [Wed Feb 11 20:25:44 2026] ***
+compiled with version: 12.2.0 on 05 January 2026 09:20:19
+os: Linux-6.12.49-alwaysdata #1 SMP PREEMPT_DYNAMIC Mon Sep 29 14:04:11 UTC 2025
+nodename: http18
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 12
+current working directory: /home/empirenexus
+detected binary path: /usr/alwaysdata/uwsgi/2.0.31/bin/uwsgi
+*** dumping internal routing table ***
+[rule: 0] action: setremoteaddr:${HTTP_X_REAL_IP}
+*** end of the internal routing table ***
+*** dumping internal response routing table ***
+[rule: 0] subject: ${X_SENDFILE} func: !empty action: fastfile:filename=${X_SENDFILE}
+*** end of the internal response routing table ***
+pulling header X-Sendfile to var X_SENDFILE
+chdir() to /home/empirenexus/Economy
+your processes number limit is 385712
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+building mime-types dictionary from file /etc/mime.types...1545 entry found
+lock engine: pthread robust mutexes
+thunder lock: enabled
+[busyness] settings: min=10%, max=90%, overload=5, multiplier=10, respawn penalty=2
+[busyness] backlog alert is set to 33 request(s), step is 1
+[busyness] backlog non-zero alert is set to 60 second(s)
+uwsgi socket 0 bound to TCP6 address [fd00::6:f98e]:8100 fd 3
+Python version: 3.13.11 (main, Jan 14 2026, 16:01:30) [GCC 12.2.0]
+PEP 405 virtualenv detected: /home/empirenexus/Economy/venv
+Set PythonHome to /home/empirenexus/Economy/venv
+Python main interpreter initialized at 0x7f6038eff9f0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 2133432 bytes (2083 KB) for 20 cores
+*** Operational MODE: preforking ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 3105358)
+spawned uWSGI worker 1 (pid: 3105359, cores: 1)
+spawned 1 offload threads for uWSGI worker 1
+Traceback (most recent call last):
+  File "/home/empirenexus/Economy/wsgi.py", line 1, in <module>
+    from dashboard import app as application
+ModuleNotFoundError: No module named 'dashboard'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+OOPS ! failed loading app in worker 1 (pid 3105359)
+Wed Feb 11 20:25:45 2026 - need-app requested, destroying the instance...
+SIGINT/SIGTERM received...killing workers...
+goodbye to uWSGI.

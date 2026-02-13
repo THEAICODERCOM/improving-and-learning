@@ -1,0 +1,7 @@
+discord.py
+python-dotenv
+flask
+flask-login
+flask-sqlalchemy
+aiosqlite
+requests

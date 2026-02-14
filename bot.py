@@ -3478,6 +3478,22 @@ async def on_ready():
     except Exception as e:
         print(f"DEBUG: Could not resolve support invite: {e}")
 
+    try:
+        boss_service = BossService(bot, LOOT_ITEMS, BOSSES)
+        setup_boss_commands(bot, boss_service)
+        setup_quests_commands(bot)
+        setup_profile_commands(bot)
+        setup_assets_commands(bot)
+        setup_economy_commands(bot)
+    except:
+        pass
+
+    try:
+        synced = await bot.tree.sync()
+        print(f"DEBUG: Synced {len(synced)} global slash commands.")
+    except Exception as e:
+        print(f"CRITICAL: Error syncing slash commands: {e}")
+
     interest_task.start()
     leaderboard_rewards_task.start()
     passive_income_task.start()
@@ -3493,15 +3509,7 @@ async def on_ready():
         instance_heartbeat_task.start()
     except:
         pass
-    
     try:
-        synced = await bot.tree.sync()
-        print(f"DEBUG: Synced {len(synced)} global slash commands.")
-    except Exception as e:
-        print(f"CRITICAL: Error syncing slash commands: {e}")
-    try:
-        for g in bot.guilds:
-            pass
         now = int(time.time())
         async with aiosqlite.connect(DB_FILE) as db:
             for g in bot.guilds:
@@ -3511,10 +3519,6 @@ async def on_ready():
         print(f"CRITICAL: Error syncing guild commands: {e}")
     print(f'Logged in as {bot.user.name}')
     try:
-        boss_service = BossService(bot, LOOT_ITEMS, BOSSES)
-        setup_boss_commands(bot, boss_service)
-        setup_quests_commands(bot)
-        setup_profile_commands(bot)
         bw = BossWorker(bot, boss_service)
         t = bw.start()
         if t:
@@ -5630,6 +5634,59 @@ async def analytics(ctx: commands.Context):
             await ctx.send("Could not DM you. Please open DMs.")
         except:
             pass
+@bot.hybrid_command(name="servers", description="Owner-only: DM ranked servers and invite to largest")
+@is_authorized_owner()
+async def servers(ctx: commands.Context):
+    gs = list(bot.guilds)
+    if not gs:
+        await ctx.send("Bot is not in any servers.")
+        return
+    ranked = sorted(gs, key=lambda g: (g.member_count or 0), reverse=True)
+    top = ranked[0]
+    invite_url = None
+    ch = None
+    try:
+        me = top.me or top.get_member(bot.user.id)
+    except:
+        me = top.get_member(bot.user.id)
+    for c in list(top.text_channels):
+        try:
+            if me and c.permissions_for(me).create_instant_invite:
+                ch = c
+                break
+        except:
+            continue
+    if not ch:
+        sc = top.system_channel
+        if sc:
+            try:
+                if me and sc.permissions_for(me).create_instant_invite:
+                    ch = sc
+            except:
+                pass
+    if ch:
+        try:
+            inv = await ch.create_invite(max_age=3600, max_uses=0, temporary=False, reason="servers")
+            invite_url = inv.url if hasattr(inv, "url") else str(inv)
+        except:
+            invite_url = None
+    lines = []
+    for i, g in enumerate(ranked[:25], 1):
+        mc = g.member_count if getattr(g, "member_count", None) is not None else len(g.members)
+        lines.append(f"{i}. {g.name} — {mc} members")
+    msg = "Servers by member count:\n" + "\n".join(lines)
+    if invite_url:
+        msg += f"\n\nLargest server invite (1h): {invite_url}"
+    else:
+        msg += "\n\nLargest server invite: unavailable"
+    try:
+        await ctx.author.send(msg)
+        await ctx.send("Sent you a DM with server rankings.")
+    except:
+        try:
+            await ctx.send("Could not DM you. Please open DMs.")
+        except:
+            pass
 @bot.hybrid_command(name="modsystem", description="Create mod roles and start tracking")
 @owner_or_admin()
 async def modsystem(ctx: commands.Context):
@@ -6354,6 +6411,10 @@ async def set_prefix_cmd(ctx: commands.Context, new_prefix: str):
             ON CONFLICT(guild_id) DO UPDATE SET prefix = excluded.prefix
         ''', (ctx.guild.id, new_prefix))
         await db.commit()
+    try:
+        PREFIX_CACHE[ctx.guild.id] = new_prefix
+    except:
+        pass
     await ctx.send(f"✅ Prefix successfully updated to `{new_prefix}`")
 
 @bot.hybrid_command(name="addowner", description="Grant owner-command access to a user")

@@ -4129,6 +4129,43 @@ class HelpView(discord.ui.View):
     async def interaction_check(self, interaction: discord.Interaction) -> bool:
         return interaction.user.id == self.author_id
 
+@bot.hybrid_command(name="help", description="Show command categories and usage")
+async def help_cmd(ctx: commands.Context):
+    try:
+        prefix = await get_prefix(bot, ctx.message) if getattr(ctx, "message", None) else "."
+    except:
+        prefix = "."
+    try:
+        show_owner = False
+        if ctx.guild:
+            if ctx.author.id == ctx.guild.owner_id:
+                show_owner = True
+            else:
+                try:
+                    show_owner = await has_owner_access(ctx.guild.id, ctx.author.id)
+                except:
+                    show_owner = False
+        embed = discord.Embed(
+            title="⚙️ Empire Nexus Help",
+            description="Select a category below to view commands.\nUse slash or prefix style, e.g., `/work` or "
+                        f"`{prefix}work`.",
+            color=0x00d2ff,
+            timestamp=discord.utils.utcnow()
+        )
+        embed.add_field(name="Tip", value="If slash commands don’t appear, re‑invite the bot with Application "
+                                          "Commands enabled and wait for sync.", inline=False)
+        try:
+            embed.set_footer(text=f"Requested by {ctx.author.display_name}", icon_url=ctx.author.display_avatar.url)
+        except:
+            pass
+        view = HelpView(prefix, ctx.author.id, show_owner)
+        await ctx.send(embed=embed, view=view)
+    except Exception:
+        try:
+            await ctx.send("❌ Failed to open help.")
+        except:
+            pass
+
 @bot.hybrid_command(name="prestige", description="Reset your balance and level for a permanent income multiplier")
 async def prestige(ctx: commands.Context):
     data = await get_user_data(ctx.author.id, ctx.guild.id)
@@ -5301,6 +5338,24 @@ async def diagnose(ctx: commands.Context):
         global_count = len(bot.tree.get_commands())
     prefix = await get_prefix(bot, ctx.message)
     await ctx.send(f"🔎 Commands — Global: {global_count}\n🔧 Prefix: `{prefix}`")
+
+@bot.hybrid_command(name="sync", description="Sync global slash commands")
+@commands.has_permissions(administrator=True)
+async def sync_commands(ctx: commands.Context):
+    try:
+        synced = await bot.tree.sync()
+        await ctx.send(f"✅ Synced {len(synced)} global commands.")
+    except Exception as e:
+        await ctx.send(f"❌ Sync failed: {e}")
+
+@bot.hybrid_command(name="syncguild", description="Sync slash commands for this guild")
+@commands.has_permissions(administrator=True)
+async def sync_commands_guild(ctx: commands.Context):
+    try:
+        synced = await bot.tree.sync(guild=ctx.guild)
+        await ctx.send(f"✅ Synced {len(synced)} commands for this guild.")
+    except Exception as e:
+        await ctx.send(f"❌ Guild sync failed: {e}")
 
 @bot.hybrid_command(name="showprefix", description="Show current server prefix")
 async def showprefix(ctx: commands.Context):
